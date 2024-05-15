@@ -39,5 +39,6 @@ echo 'g keyd' | install -Dm644 /dev/stdin "%{buildroot}/usr/lib/sysusers.d/%{nam
 %license LICENSE
 
 %changelog
-{{{ git_dir_changelog }}}
+* Wed May 15 2024 ignic <ignic@mail.org> - 1
+- First package
 
