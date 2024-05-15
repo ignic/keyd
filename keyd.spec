@@ -37,3 +37,7 @@ echo 'g keyd' | install -Dm644 /dev/stdin "%{buildroot}/usr/lib/sysusers.d/%{nam
 %{_mandir}/man1/%{name}.1.gz
 %{_mandir}/man1/%{name}-application-mapper.1.gz
 %license LICENSE
+
+%changelog
+{{{ git_dir_changelog }}}
+
