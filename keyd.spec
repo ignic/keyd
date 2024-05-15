@@ -22,7 +22,7 @@ make
 %install
 install -dm755 "%{buildroot}/usr/lib/systemd/system"
 install -dm755 "%{buildroot}/usr/share/libinput"
-make DESTDIR=%{buildroot} install
+make DESTDIR=%{buildroot} PREFIX=/usr install
 echo 'g keyd' | install -Dm644 /dev/stdin "%{buildroot}/usr/lib/sysusers.d/%{name}.conf"
 
 %files
