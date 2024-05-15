@@ -49,12 +49,8 @@ man:
 		scdoc < "$$f" | gzip > "$$target"; \
 	done
 install:
-	@if [ -e /run/systemd/system ]; then \
-		mkdir -p $(DESTDIR)$(PREFIX)/lib/systemd/system/; \
-		install -Dm644 keyd.service $(DESTDIR)$(PREFIX)/lib/systemd/system/keyd.service; \
-	else \
-		echo "NOTE: systemd not found, you will need to manually add keyd to your system's init process."; \
-	fi
+	mkdir -p $(DESTDIR)$(PREFIX)/lib/systemd/system/; \
+	install -Dm644 keyd.service $(DESTDIR)$(PREFIX)/lib/systemd/system/keyd.service; \
 
 	@if [ "$(VKBD)" = "usb-gadget" ]; then \
 		install -Dm644 src/vkbd/usb-gadget.service $(DESTDIR)$(PREFIX)/lib/systemd/system/keyd-usb-gadget.service; \
