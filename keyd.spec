@@ -14,7 +14,7 @@ BuildRequires: kernel-headers
 %{summary}
 
 %prep
-%autosetup
+%setup -n keyd-master
 
 %build
 make
