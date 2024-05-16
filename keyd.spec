@@ -42,7 +42,7 @@ getent group %{name} >/dev/null || groupadd -r %{name}
 %{_docdir}/%{name}
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1.gz
-%{_mandir}/man1/%{name}-application-manager.1.gz
+%{_mandir}/man1/%{name}-application-mapper.1.gz
 %license LICENSE
 
 %post
