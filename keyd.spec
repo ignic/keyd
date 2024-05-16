@@ -22,7 +22,7 @@ BuildRequires: systemd-rpm-macros
 {{{ git_dir_setup_macro }}}
 
 %build
-make
+make PREFIX=/usr
 
 %install
 make DESTDIR=%{buildroot} PREFIX=/usr install
