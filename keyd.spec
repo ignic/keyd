@@ -26,14 +26,23 @@ make
 
 %install
 make DESTDIR=%{buildroot} PREFIX=/usr install
+echo 'g keyd' | install -Dm644 /dev/stdin %{buildroot}%{_sysusersdir}/%{name}.conf
+
+%pre
+#!/bin/sh
+set -e
+getent group %{name} >/dev/null || groupadd -r %{name}
 
 %files
 %{_sysconfdir}/%{name}
 %{_bindir}/%{name}
+%{_bindir}/%{name}-application-mapper
 %{_unitdir}/%{name}.service
+%{_sysusersdir}/%{name}.conf
 %{_docdir}/%{name}
 %{_datadir}/%{name}
 %{_mandir}/man1/%{name}.1.gz
+%{_mandir}/man1/%{name}-application-manager.1.gz
 %license LICENSE
 
 %post
